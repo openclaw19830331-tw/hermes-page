@@ -1,0 +1,49 @@
+/* Hermes 統一樣式 —— 狀態頁與每日文章共用 */
+:root {
+  color-scheme: light dark;
+  --accent: #0e7c6b;
+  --accent-soft: #0e7c6b22;
+  --border: color-mix(in srgb, currentColor 18%, transparent);
+  --muted: color-mix(in srgb, currentColor 62%, transparent);
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "Noto Sans TC", system-ui, sans-serif;
+  max-width: 680px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem;
+  line-height: 1.85;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+header.site { margin-bottom: 2rem; }
+header.site h1 { font-size: 1.55rem; margin: 0 0 .25rem; }
+header.site p { color: var(--muted); margin: 0; font-size: .92rem; }
+.card {
+  border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.1rem 1.35rem; margin: 1.1rem 0;
+}
+.ok { color: #2e7d32; }
+.muted { color: var(--muted); font-size: .9rem; }
+.tag {
+  display: inline-block; background: var(--accent-soft); color: var(--accent);
+  border-radius: 999px; padding: .05rem .7rem; font-size: .8rem; margin-right: .4rem;
+}
+article h1 { font-size: 1.45rem; line-height: 1.5; margin: .4rem 0 .6rem; }
+article .cover {
+  width: 100%; max-height: 360px; object-fit: cover;
+  border-radius: 14px; margin: 1rem 0;
+}
+article .cover-fallback {
+  height: 140px; border-radius: 14px; margin: 1rem 0;
+  background: linear-gradient(120deg, #0e7c6b, #64b5a6);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.4rem;
+}
+article p { margin: .9rem 0; }
+.links li { margin: .35rem 0; }
+.post-list { list-style: none; padding: 0; }
+.post-list li {
+  border-bottom: 1px solid var(--border);
+  padding: .8rem .2rem; display: flex; gap: 1rem; align-items: baseline;
+}
+.post-list time { color: var(--muted); font-size: .85rem; white-space: nowrap; }
+footer.site { margin-top: 3rem; color: var(--muted); font-size: .85rem; }

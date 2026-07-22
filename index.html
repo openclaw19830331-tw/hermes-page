@@ -3,41 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hermes 狀態頁</title>
-<style>
-  :root { color-scheme: light dark; }
-  body {
-    font-family: "Noto Sans TC", system-ui, sans-serif;
-    max-width: 640px; margin: 3rem auto; padding: 0 1.25rem;
-    line-height: 1.7;
-  }
-  h1 { font-size: 1.6rem; }
-  .card {
-    border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
-    border-radius: 12px; padding: 1rem 1.25rem; margin: 1rem 0;
-  }
-  .ok { color: #2e7d32; }
-  .muted { opacity: .65; font-size: .9rem; }
-</style>
+<title>Hermes 智慧長照日報</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🛰️ Hermes 機器人狀態頁</h1>
-  <p class="muted">馬偕智慧長照 · 自動經營與安全巡視助手</p>
-
-  <div class="card">
-    <p><strong>狀態：</strong><span class="ok">● 運行中</span>（Raspberry Pi）</p>
-    <p><strong>最後更新：</strong><span id="updated">2026-07-22 17:00 (+08)</span></p>
-  </div>
-
-  <div class="card">
-    <h2 style="font-size:1.1rem">功能</h2>
-    <ul>
-      <li>Telegram 對話（Gemini flash-lite，雙 key 容錯）</li>
-      <li>安全巡視拍照（兩台 USB 攝影機）</li>
-      <li>粉絲頁自動經營排程（每日 10 / 15 / 20 時）</li>
-    </ul>
-  </div>
-
-  <p class="muted">此頁由 hermes 機器人自動更新。</p>
+<header class="site">
+  <h1>🛰️ Hermes 智慧長照日報</h1>
+  <p>馬偕智慧長照 · 每日一篇智慧科技 × 長期照顧專欄，由 hermes 機器人自動撰寫</p>
+</header>
+<div class="card">
+  <p class="muted">最新一篇 · 2026-07-22</p>
+  <h2 style="margin:.2rem 0 .4rem;font-size:1.2rem"><a href="posts/2026-07-22.html">用科技克服距離：高齡照顧的真實溫度</a></h2>
+</div>
+<h2 style="font-size:1.05rem">全部文章</h2>
+<ul class="post-list"><li><time>2026-07-22</time><a href="posts/2026-07-22.html">用科技克服距離：高齡照顧的真實溫度</a></li></ul>
+<footer class="site">狀態：● 運行中（Raspberry Pi + GitHub Actions） · 由 hermes 機器人自動更新</footer>
 </body>
 </html>

@@ -1,0 +1,35 @@
+name: Daily eldercare article
+
+on:
+  schedule:
+    - cron: "0 1 * * *"   # 09:00 台北時間
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install defusedxml
+
+      - name: Generate today's article
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+        run: python scripts/generate_daily.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "hermes-bot"
+          git config user.email "openclow19830331@gmail.com"
+          git add -A
+          git diff --cached --quiet || { git commit -m "Daily article $(TZ=Asia/Taipei date +%F)"; git push; }
