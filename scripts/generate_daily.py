@@ -184,7 +184,9 @@ def find_og_image(url: str) -> str | None:
 def render_cover_svg(date: str, keyword: str) -> str:
     """以日期為種子畫一張幾何封面：每天配色/構圖不同，整體風格統一。"""
     seed = int(date.replace("-", ""))
-    hue = (seed * 47) % 360
+    # 科技又溫馨：色相只在暖青綠～珊瑚橘家族輪替，不出現冷紫藍
+    palette = [168, 152, 96, 38, 16]  # teal / sage / 黃綠 / 琥珀 / 珊瑚
+    hue = palette[seed % len(palette)]
     circles = []
     x = seed
     for i in range(6):
@@ -198,10 +200,14 @@ def render_cover_svg(date: str, keyword: str) -> str:
         )
     return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-label="每日封面">
 <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-  <stop offset="0" stop-color="hsl({hue} 42% 30%)"/>
-  <stop offset="1" stop-color="hsl({(hue + 40) % 360} 45% 45%)"/>
-</linearGradient></defs>
+  <stop offset="0" stop-color="hsl({hue} 40% 32%)"/>
+  <stop offset="1" stop-color="hsl({max(hue - 60, 16)} 55% 48%)"/>
+</linearGradient>
+<pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+  <circle cx="2" cy="2" r="1.6" fill="#ffffff22"/>
+</pattern></defs>
 <rect width="1200" height="500" fill="url(#g)"/>
+<rect width="1200" height="500" fill="url(#dots)"/>
 {"".join(circles)}
 <text x="70" y="392" font-family="'Noto Sans TC',sans-serif" font-size="54" fill="#fff" font-weight="700">{html.escape(keyword)}</text>
 <text x="70" y="446" font-family="'Noto Sans TC',sans-serif" font-size="28" fill="#ffffffbb">Hermes 智慧長照日報 · {date}</text>

@@ -1,49 +1,62 @@
-/* Hermes 統一樣式 —— 狀態頁與每日文章共用 */
+/* Hermes 統一樣式 —— 科技 × 溫馨：暖青綠主色、珊瑚輔色、紙感背景、圓潤卡片 */
 :root {
   color-scheme: light dark;
-  --accent: #0e7c6b;
-  --accent-soft: #0e7c6b22;
-  --border: color-mix(in srgb, currentColor 18%, transparent);
-  --muted: color-mix(in srgb, currentColor 62%, transparent);
+  --accent: #0e7c6b;          /* 暖青綠：照護、安心 */
+  --warm: #e8734a;            /* 珊瑚橘：溫度、活力 */
+  --accent-soft: #0e7c6b1a;
+  --warm-soft: #e8734a1f;
+  --border: color-mix(in srgb, currentColor 14%, transparent);
+  --muted: color-mix(in srgb, currentColor 60%, transparent);
 }
 * { box-sizing: border-box; }
 body {
   font-family: "Noto Sans TC", system-ui, sans-serif;
   max-width: 680px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem;
-  line-height: 1.85;
+  line-height: 1.9;
+  background: #faf7f2;                    /* 暖紙感 */
+  color: #2b2a26;
+}
+@media (prefers-color-scheme: dark) {
+  body { background: #1b1d1e; color: #e8e4dc; }
 }
 a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
 header.site { margin-bottom: 2rem; }
-header.site h1 { font-size: 1.55rem; margin: 0 0 .25rem; }
+header.site h1 { font-size: 1.55rem; margin: 0 0 .25rem; letter-spacing: .02em; }
 header.site p { color: var(--muted); margin: 0; font-size: .92rem; }
 .card {
   border: 1px solid var(--border);
-  border-radius: 14px; padding: 1.1rem 1.35rem; margin: 1.1rem 0;
+  border-radius: 18px; padding: 1.15rem 1.4rem; margin: 1.15rem 0;
+  background: color-mix(in srgb, var(--accent) 3%, transparent);
+  box-shadow: 0 1px 6px color-mix(in srgb, var(--accent) 8%, transparent);
 }
 .ok { color: #2e7d32; }
 .muted { color: var(--muted); font-size: .9rem; }
 .tag {
-  display: inline-block; background: var(--accent-soft); color: var(--accent);
-  border-radius: 999px; padding: .05rem .7rem; font-size: .8rem; margin-right: .4rem;
+  display: inline-block; background: var(--warm-soft); color: var(--warm);
+  border-radius: 999px; padding: .05rem .75rem; font-size: .8rem; margin-right: .45rem;
+  font-weight: 500;
 }
-article h1 { font-size: 1.45rem; line-height: 1.5; margin: .4rem 0 .6rem; }
+article h1 { font-size: 1.45rem; line-height: 1.55; margin: .4rem 0 .6rem; }
 article .cover {
   width: 100%; max-height: 360px; object-fit: cover;
-  border-radius: 14px; margin: 1rem 0;
+  border-radius: 18px; margin: 1rem 0;
 }
 article .cover-fallback {
-  height: 140px; border-radius: 14px; margin: 1rem 0;
-  background: linear-gradient(120deg, #0e7c6b, #64b5a6);
+  height: 140px; border-radius: 18px; margin: 1rem 0;
+  background: linear-gradient(120deg, var(--accent), #64b5a6, var(--warm));
   display: flex; align-items: center; justify-content: center;
   font-size: 2.4rem;
 }
-article p { margin: .9rem 0; }
-.links li { margin: .35rem 0; }
+article p { margin: .95rem 0; }
+.links li { margin: .4rem 0; }
 .post-list { list-style: none; padding: 0; }
 .post-list li {
-  border-bottom: 1px solid var(--border);
-  padding: .8rem .2rem; display: flex; gap: 1rem; align-items: baseline;
+  border-bottom: 1px dashed var(--border);
+  padding: .85rem .2rem; display: flex; gap: 1rem; align-items: baseline;
 }
-.post-list time { color: var(--muted); font-size: .85rem; white-space: nowrap; }
+.post-list time {
+  color: var(--muted); font-size: .82rem; white-space: nowrap;
+  font-family: ui-monospace, "Cascadia Code", monospace;  /* 一點科技感 */
+}
 footer.site { margin-top: 3rem; color: var(--muted); font-size: .85rem; }
