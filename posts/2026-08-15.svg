@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-label="每日封面">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="hsl(168 40% 32%)"/>
+  <stop offset="1" stop-color="hsl(108 55% 48%)"/>
+</linearGradient>
+<pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+  <circle cx="2" cy="2" r="1.6" fill="#ffffff22"/>
+</pattern></defs>
+<rect width="1200" height="500" fill="url(#g)"/>
+<rect width="1200" height="500" fill="url(#dots)"/>
+<circle cx="240" cy="253" r="105" fill="hsl(168 45% 62%)" opacity="0.10"/><circle cx="305" cy="384" r="59" fill="hsl(193 45% 62%)" opacity="0.17"/><circle cx="598" cy="65" r="44" fill="hsl(218 45% 62%)" opacity="0.24"/><circle cx="159" cy="69" r="146" fill="hsl(243 45% 62%)" opacity="0.10"/><circle cx="932" cy="275" r="90" fill="hsl(268 45% 62%)" opacity="0.17"/><circle cx="789" cy="389" r="84" fill="hsl(293 45% 62%)" opacity="0.24"/>
+<text x="70" y="392" font-family="'Noto Sans TC',sans-serif" font-size="54" fill="#fff" font-weight="700">智慧長照</text>
+<text x="70" y="446" font-family="'Noto Sans TC',sans-serif" font-size="28" fill="#ffffffbb">Hermes 智慧長照日報 · 2026-08-15</text>
+</svg>
