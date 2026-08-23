@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-label="每日封面">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="hsl(38 40% 32%)"/>
+  <stop offset="1" stop-color="hsl(16 55% 48%)"/>
+</linearGradient>
+<pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+  <circle cx="2" cy="2" r="1.6" fill="#ffffff22"/>
+</pattern></defs>
+<rect width="1200" height="500" fill="url(#g)"/>
+<rect width="1200" height="500" fill="url(#dots)"/>
+<circle cx="608" cy="432" r="109" fill="hsl(38 45% 62%)" opacity="0.10"/><circle cx="649" cy="291" r="66" fill="hsl(63 45% 62%)" opacity="0.17"/><circle cx="1070" cy="314" r="60" fill="hsl(88 45% 62%)" opacity="0.24"/><circle cx="663" cy="298" r="62" fill="hsl(113 45% 62%)" opacity="0.10"/><circle cx="604" cy="161" r="50" fill="hsl(138 45% 62%)" opacity="0.17"/><circle cx="501" cy="257" r="70" fill="hsl(163 45% 62%)" opacity="0.24"/>
+<text x="70" y="392" font-family="'Noto Sans TC',sans-serif" font-size="54" fill="#fff" font-weight="700">失智症 科技</text>
+<text x="70" y="446" font-family="'Noto Sans TC',sans-serif" font-size="28" fill="#ffffffbb">Hermes 智慧長照日報 · 2026-08-23</text>
+</svg>
